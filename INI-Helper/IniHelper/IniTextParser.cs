@@ -7,7 +7,7 @@ using System.Text;
 
 namespace IniHelper
 {
-	public class IniTextParser : IDisposable
+	public sealed class IniTextParser : IDisposable
 	{
 		private TextReader reader;
 		private string? line = null;
