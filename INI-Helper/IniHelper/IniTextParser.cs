@@ -7,6 +7,9 @@ using System.Text;
 
 namespace IniHelper
 {
+	// https://www.php.net/manual/ja/function.parse-ini-file.php
+	// https://www.php.net/manual/ja/function.parse-ini-string.php
+
 	public sealed class IniTextParser : IDisposable
 	{
 		private TextReader reader;
