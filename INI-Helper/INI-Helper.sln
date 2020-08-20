@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IniHelper", "IniHelper\IniHelper.csproj", "{542EE33B-83E2-4B0A-9562-8C9160FF9169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IniHelper", "IniHelper\IniHelper.csproj", "{542EE33B-83E2-4B0A-9562-8C9160FF9169}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IniHelperTest", "IniHelperTest\IniHelperTest.csproj", "{F6D9B9F6-8DE3-47C4-809D-21F1C4F82F92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IniHelperBenchmark", "IniHelperBenchmark\IniHelperBenchmark.csproj", "{A69FFD11-67EF-4941-8756-02FC4F0C2533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{542EE33B-83E2-4B0A-9562-8C9160FF9169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{542EE33B-83E2-4B0A-9562-8C9160FF9169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{542EE33B-83E2-4B0A-9562-8C9160FF9169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D9B9F6-8DE3-47C4-809D-21F1C4F82F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D9B9F6-8DE3-47C4-809D-21F1C4F82F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D9B9F6-8DE3-47C4-809D-21F1C4F82F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D9B9F6-8DE3-47C4-809D-21F1C4F82F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69FFD11-67EF-4941-8756-02FC4F0C2533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69FFD11-67EF-4941-8756-02FC4F0C2533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69FFD11-67EF-4941-8756-02FC4F0C2533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69FFD11-67EF-4941-8756-02FC4F0C2533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
