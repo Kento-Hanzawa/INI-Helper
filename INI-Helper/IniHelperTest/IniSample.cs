@@ -4,9 +4,9 @@ using System.Text;
 
 namespace IniHelperTest
 {
-	public static class IniSample
-	{
-		public static readonly string Text = @"
+    public static class IniSample
+    {
+        public static readonly string Text = @"
 ; Global Parameter
 g_key1 = g_value1
 g_key2 = g_value2
@@ -89,5 +89,5 @@ key4 = ""aaa
 ""ccc""
 bbb""
 ";
-	}
+    }
 }
