@@ -59,10 +59,10 @@ namespace IniHelperTest
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Check(IniSample.Text));
+            Console.WriteLine(ReadCheck(IniSample.Text) && WriteCheck(IniSample.Text2));
         }
 
-        static bool Check(string ini)
+        static bool ReadCheck(string ini)
         {
             var result = IniParser.Parse(ini);
             if (Answer.Count != result.Length)
@@ -80,6 +80,42 @@ namespace IniHelperTest
                 }
             }
             return true;
+        }
+
+        static bool WriteCheck(string ini)
+        {
+            var writer = new IniWriter();
+            writer.WriteEmptyLine();
+            writer.WriteComment("Section1");
+            writer.WriteSection("Section1");
+            writer.WriteComment("empty");
+            writer.WriteParameter("key1", "");
+            writer.WriteComment("aaa");
+            writer.WriteParameter("key2", "aaa");
+            writer.WriteComment("a\"a");
+            writer.WriteParameter("key3", "a\"a");
+            writer.WriteComment("a'a");
+            writer.WriteParameter("key4", "a'a");
+            writer.WriteEmptyLine();
+            writer.WriteComment("Section2");
+            writer.WriteSection("Section2");
+            writer.WriteComment("'aaa'bbb");
+            writer.WriteParameter("key1", "'aaa'bbb");
+            writer.WriteComment("aaa'bbb'");
+            writer.WriteParameter("key2", "aaa'bbb'");
+            writer.WriteComment("\"aaa\"bbb");
+            writer.WriteParameter("key3", "\"aaa\"bbb");
+            writer.WriteComment("aaa\"bbb\"");
+            writer.WriteParameter("key4", "aaa\"bbb\"");
+            writer.WriteComment("'aaa'\"bbb\"");
+            writer.WriteParameter("key5", "'aaa'\"bbb\"");
+            writer.WriteComment("\"aaa\"'bbb'");
+            writer.WriteParameter("key6", "\"aaa\"'bbb'");
+            writer.WriteComment("'aaa''bbb'");
+            writer.WriteParameter("key7", "'aaa''bbb'");
+            writer.WriteComment("\"aaa\"\"bbb\"");
+            writer.WriteParameter("key8", "\"aaa\"\"bbb\"");
+            return ini == writer.ToString();
         }
     }
 }

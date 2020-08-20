@@ -89,5 +89,37 @@ key4 = ""aaa
 ""ccc""
 bbb""
 ";
+
+        public static readonly string Text2 = @"
+; Section1
+[Section1]
+; empty
+key1 = ''
+; aaa
+key2 = ""aaa""
+; a""a
+key3 = 'a""a'
+; a'a
+key4 = ""a'a""
+
+; Section2
+[Section2]
+; 'aaa'bbb
+key1 = ""'aaa'bbb""
+; aaa'bbb'
+key2 = ""aaa'bbb'""
+; ""aaa""bbb
+key3 = '""aaa""bbb'
+; aaa""bbb""
+key4 = 'aaa""bbb""'
+; 'aaa'""bbb""
+key5 = ""'aaa'""'""bbb""'
+; ""aaa""'bbb'
+key6 = '""aaa""'""'bbb'""
+; 'aaa''bbb'
+key7 = ""'aaa''bbb'""
+; ""aaa""""bbb""
+key8 = '""aaa""""bbb""'
+";
     }
 }

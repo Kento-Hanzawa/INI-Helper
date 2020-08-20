@@ -37,7 +37,7 @@ namespace IniHelperBenchmark
         {
         }
 
-        [Benchmark(Description = "IniTextParser.Parse()")]
+        [Benchmark(Description = "IniParser.Parse()")]
         public Action Method1()
         {
             Action _ = null;
@@ -56,16 +56,9 @@ namespace IniHelperBenchmark
     {
         public BenchmarkConfig()
         {
-            // ベンチマーク結果を書く時に出力させとくとベンリ
             AddExporter(MarkdownExporter.GitHub);
             AddDiagnoser(MemoryDiagnoser.Default);
-
-            // ShortRunを使うとサクッと終わらせられる、デフォルトだと本気で長いので短めにしとく。
-            // ShortRunは LaunchCount=1  TargetCount=3 WarmupCount = 3 のショートカット
             AddJob(Job.ShortRun);
-
-            // ダルいのでShortRunどころか1回, 1回でやる
-            //Add( Job.ShortRun.With( BenchmarkDotNet.Environments.Platform.X64 ).WithWarmupCount( 1 ).WithTargetCount( 1 ) );
         }
     }
 }
