@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>K.Hanzawa</Authors>
   </PropertyGroup>
 
@@ -12,7 +12,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.7" />
   </ItemGroup>
 
 </Project>
