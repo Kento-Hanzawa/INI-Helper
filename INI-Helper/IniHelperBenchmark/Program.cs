@@ -11,64 +11,54 @@ using IniHelperTest;
 
 namespace IniHelperBenchmark
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			BenchmarkRunner.Run<CommonBenchmark>();
-		}
-	}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BenchmarkRunner.Run<CommonBenchmark>();
+        }
+    }
 
-	[Config(typeof(BenchmarkConfig))]
-	public class CommonBenchmark
-	{
-		private static readonly int Weight = 200;
+    [Config(typeof(BenchmarkConfig))]
+    public class CommonBenchmark
+    {
+        private static readonly int Weight = 200;
 
-		private string sample;
+        private string sample;
 
-		[GlobalSetup]
-		public void GlobalSetup()
-		{
-			sample = IniSample.Text;
-		}
+        [GlobalSetup]
+        public void GlobalSetup()
+        {
+            sample = IniSample.Text;
+        }
 
-		[GlobalCleanup]
-		public void GlobalCleanup()
-		{
-		}
+        [GlobalCleanup]
+        public void GlobalCleanup()
+        {
+        }
 
-		[Benchmark(Description = "IniTextParser.Parse()")]
-		public Action Method1()
-		{
-			Action _ = null;
+        [Benchmark(Description = "IniParser.Parse()")]
+        public Action Method1()
+        {
+            Action _ = null;
 
-			for (var i = 0; i < Weight; i++)
-			{
-				using (var reader = new IniTextParser(sample))
-				{
-					var a = reader.Parse();
-				}
-			}
+            for (var i = 0; i < Weight; i++)
+            {
+                var a = IniParser.Parse(sample);
+            }
 
-			return _;
-		}
-	}
+            return _;
+        }
+    }
 
-	// 参考: http://engineering.grani.jp/entry/2017/07/28/145035
-	public class BenchmarkConfig : ManualConfig
-	{
-		public BenchmarkConfig()
-		{
-			// ベンチマーク結果を書く時に出力させとくとベンリ
-			AddExporter(MarkdownExporter.GitHub);
-			AddDiagnoser(MemoryDiagnoser.Default);
-
-			// ShortRunを使うとサクッと終わらせられる、デフォルトだと本気で長いので短めにしとく。
-			// ShortRunは LaunchCount=1  TargetCount=3 WarmupCount = 3 のショートカット
-			AddJob(Job.ShortRun);
-
-			// ダルいのでShortRunどころか1回, 1回でやる
-			//Add( Job.ShortRun.With( BenchmarkDotNet.Environments.Platform.X64 ).WithWarmupCount( 1 ).WithTargetCount( 1 ) );
-		}
-	}
+    // 参考: http://engineering.grani.jp/entry/2017/07/28/145035
+    public class BenchmarkConfig : ManualConfig
+    {
+        public BenchmarkConfig()
+        {
+            AddExporter(MarkdownExporter.GitHub);
+            AddDiagnoser(MemoryDiagnoser.Default);
+            AddJob(Job.ShortRun);
+        }
+    }
 }
