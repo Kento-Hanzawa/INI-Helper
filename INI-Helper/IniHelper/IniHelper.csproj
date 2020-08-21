@@ -8,6 +8,7 @@
     <PackageProjectUrl>https://github.com/Kento-Hanzawa/INI-Helper</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>Provides a utility for INI files.</Description>
   </PropertyGroup>
 
   <ItemGroup>
