@@ -3,11 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <Authors>K.Hanzawa</Authors>
     <PackageProjectUrl>https://github.com/Kento-Hanzawa/INI-Helper</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>Provides a utility for INI files.</Description>
   </PropertyGroup>
 
   <ItemGroup>
