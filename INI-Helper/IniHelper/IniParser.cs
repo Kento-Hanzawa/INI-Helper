@@ -25,24 +25,15 @@ namespace IniHelper
                 {
                     case IniToken.Section:
                         sectionName = reader.ReadSection();
-#if DEBUG
-                        Console.WriteLine($"SECTION:{sectionName}");
-#endif
                         continue;
 
                     case IniToken.Comment:
                         var comment = reader.ReadComment(); // 未使用
-#if DEBUG
-                        Console.WriteLine($"COMMENT:{comment}");
-#endif
                         continue;
 
                     case IniToken.Parameter:
                         var parameter = reader.ReadParameter();
                         result.Add(new KeyValuePair<string?, KeyValuePair<string, string>>(sectionName, new KeyValuePair<string, string>(parameter.Value.Key, parameter.Value.Value)));
-#if DEBUG
-                        Console.WriteLine($"PARAMETER:{{{parameter.Value.Key}, {parameter.Value.Value}}}");
-#endif
                         continue;
 
                     case IniToken.None:
